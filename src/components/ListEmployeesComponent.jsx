@@ -9,6 +9,7 @@ function ListEmployeesComponent() {
   useEffect(() => {
     EmployeeService.getEmployees().then((res) => {
       setEmployees(res.data);
+      console.log(res.data);
     });
   }, []);
 
@@ -53,7 +54,8 @@ function ListEmployeesComponent() {
                 <td>{employee.firstName}</td>
                 <td>{employee.lastName}</td>
                 <td>{employee.email}</td>
-                <td>{employee.isActive}</td>
+                {/* <td>{String(employee.active)}</td> */}
+                <td><input type="checkbox" readOnly checked={employee.active}></input></td>
                 <td>
                   <button className='btn btn-info' onClick={() => handleEditEmployee(employee.id)}>
                     Update

@@ -21,7 +21,7 @@ function HeaderComponent() {
 
   const handleGoSearch = () => {
     console.log("Search String: " + searchQuery);
-    navigate("/");
+    //navigate("/");
     // navigate(`/search?query=${searchQuery}`)
   }
 
